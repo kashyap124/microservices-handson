@@ -1,8 +1,7 @@
 # Create image based on the official Node 12 image from dockerhub
-FROM node:18-alpine
+FROM node:20-alpine
 
-LABEL author="Vijayendra Mudigal"
-MAINTAINER contact@mudigal.com
+LABEL author="Kashyap"
 
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
