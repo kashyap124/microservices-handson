@@ -1,0 +1,28 @@
+version: '2.2'
+
+services:
+  service-one-db:
+    container_name: "service-one-db"
+    hostname: "serviceonedb"
+    image: "mongo:latest"
+    environment:
+      - MONGODB_USER="service-one" 
+      - MONGODB_PASS="service-one"
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  mongodata:
+    driver: local

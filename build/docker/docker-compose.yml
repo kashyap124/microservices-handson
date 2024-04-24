@@ -1,4 +1,4 @@
-version: '3.8'
+version: "2.21"
 
 services:
   # ---------------------------
@@ -284,4 +284,4 @@ networks:
 
 volumes:
   mongodata:
-  
+    driver: local
